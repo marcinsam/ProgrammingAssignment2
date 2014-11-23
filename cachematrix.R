@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   
   get <- function() x
-  setcm <- function (cachematrix) cm <-- cachematrix
+  setcm <- function (cachematrix) cm <- cachematrix
   getcm <- function() cm
   list(set = set, get = get, setcm = setcm, 
        getcm = getcm)
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  cm <- x$getcm()
+  cm <- getElement(x, getcm)
   if(!is.null(cm)) {
     message("getting cached data")
     return(cm)
